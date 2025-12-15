@@ -1,0 +1,12 @@
+{
+  "name": "default",
+  "actions": [
+    {
+      "name": "move_right",
+      "bindings": [
+        { "device": "keyboard", "key": "D" },
+        { "device": "keyboard", "key": "Right" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "player",
+  "entities": [
+    {
+      "name": "Player",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 0, "y": 0 } },
+        { "name": "Velocity2D", "data": { "vx": 2, "vy": 1 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "player", "layer": 0.5 } }
+      ]
+    }
+  ]
+}

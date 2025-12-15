@@ -1,0 +1,22 @@
+# Build artifacts
+bin/
+obj/
+out/
+artifacts/
+
+# IDE user files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userprefs
+
+# Tools/cache
+*.nupkg
+packages/
+*.cache
+*.log
+
+# OS noise
+.DS_Store
+Thumbs.db
