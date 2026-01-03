@@ -1,3 +1,4 @@
+using FactoryEngine.Core.Services.Asset;
 using FactoryEngine.Core.Services.Audio;
 using FactoryEngine.Core.Systems;
 
@@ -8,6 +9,7 @@ public sealed class AudioSystem : SystemBase
     private readonly string _bank;
     private readonly string _sound;
     private bool _played;
+    private bool _clipLoaded;
 
     public AudioSystem(string bank, string sound)
     {
@@ -17,10 +19,26 @@ public sealed class AudioSystem : SystemBase
 
     protected override void OnRun(SystemContext context)
     {
-        if (!_played && context.Services.Audio.TryResolveSound(_bank, _sound, out var definition))
+        if (context.Services.Audio.TryResolveSound(_bank, _sound, out var definition))
         {
-            context.Services.Audio.PlaySound(_sound, new AudioParams(definition.Volume, 0f));
-            _played = true;
+            EnsureClipLoaded(context, definition.Asset);
+            if (!_played)
+            {
+                var soundId = $"{_bank}:{_sound}";
+                context.Services.Audio.PlaySound(soundId, new AudioParams(definition.Volume, 0f, 0.2f));
+                _played = true;
+            }
         }
+    }
+
+    private void EnsureClipLoaded(SystemContext context, AssetId assetId)
+    {
+        if (_clipLoaded)
+        {
+            return;
+        }
+
+        context.Services.Assets.Load<AudioClipAsset>(assetId);
+        _clipLoaded = true;
     }
 }

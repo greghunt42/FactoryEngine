@@ -1,0 +1,38 @@
+{
+  "id": "enemies",
+  "entities": [
+    {
+      "name": "Drone",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -60, "y": 280 } },
+        { "name": "Collider2D", "data": { "width": 48, "height": 48 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "enemy", "layer": 0.3 } },
+        { "name": "Hazard", "data": { "message": "Drone zap!", "resetDelay": 2.5 } }
+      ]
+    },
+    {
+      "name": "GuardianOrb",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 10, "y": 200 } },
+        { "name": "Collider2D", "data": { "width": 36, "height": 36 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "enemy-guardian", "layer": 0.3 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Guardian surge!",
+            "resetDelay": 2.4,
+            "sound": "core:hazard-plasma"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "axis": "Horizontal",
+            "range": 160,
+            "speed": 60
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "window": {
+    "title": "FactoryPlatformer Sample",
+    "width": 1280,
+    "height": 720
+  },
+  "scene": {
+    "prefabs": [
+      "player"
+    ]
+  },
+  "sceneSelection": {
+    "enabled": true,
+    "hint": "Press Enter to choose a scene"
+  },
+  "playerTuning": {
+    "runSpeed": 35,
+    "groundAccel": 320,
+    "airAccel": 160,
+    "airControl": 0.5,
+    "airControlExp": 1.25,
+    "jumpCut": 0.4,
+    "wallSlideSpeed": 80,
+    "wallSlideStick": 0.15,
+    "wallJumpSpeed": 200,
+    "wallJumpCooldown": 0.2,
+    "airDodgeEnabled": true,
+    "airDodgeSpeed": 240,
+    "airDodgeCooldown": 1.1,
+    "airDodgeTrail": 0.25
+  },
+  "activeScene": "platform-demo",
+  "scenes": {
+    "platform-demo": {
+      "prefabs": [
+        "level",
+        "platforms",
+        "collectibles",
+        "ancient-relics",
+        "hazards",
+        "sentinels",
+        "plasma-fields",
+        "frost-biome",
+        "turret-traps",
+        "enemies",
+        "goal",
+        "player"
+      ]
+    },
+    "player-only": {
+      "prefabs": [
+        "player"
+      ]
+    },
+    "headless-demo": {
+      "prefabs": [
+        "headless-level",
+        "headless-collectible",
+        "headless-goal",
+        "headless-player"
+      ]
+    }
+  }
+}

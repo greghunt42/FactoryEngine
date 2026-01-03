@@ -1,0 +1,333 @@
+{
+  "namespace": "core",
+  "root": "..",
+  "assets": {
+    "player.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/player.json"
+    },
+    "level.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/level.json"
+    },
+    "platforms.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/platforms.json"
+    },
+    "collectibles.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/collectibles.json"
+    },
+    "hazards.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/hazards.json"
+    },
+    "goal.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/goal.json"
+    },
+    "enemies.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/enemies.json"
+    },
+    "headless-collectible.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/headless-collectible.json"
+    },
+    "headless-goal.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/headless-goal.json"
+    },
+    "headless-level.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/headless-level.json"
+    },
+    "headless-player.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/headless-player.json"
+    },
+    "sentinels.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/sentinels.json"
+    },
+    "ancient-relics.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/ancient-relics.json"
+    },
+    "turret-traps.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/turret-traps.json"
+    },
+    "plasma-fields.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/plasma-fields.json"
+    },
+    "frost-biome.prefab": {
+      "type": "Prefab",
+      "path": "prefabs/frost-biome.json"
+    },
+    "player": {
+      "type": "Texture",
+      "path": "textures/player.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "platform": {
+      "type": "Texture",
+      "path": "textures/platform.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "collectible": {
+      "type": "Texture",
+      "path": "textures/collectible.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "collectible-frost": {
+      "type": "Texture",
+      "path": "textures/collectible-frost.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "collectible-core": {
+      "type": "Texture",
+      "path": "textures/collectible-core.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "collectible-rare": {
+      "type": "Texture",
+      "path": "textures/collectible-rare.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "collectible-legendary": {
+      "type": "Texture",
+      "path": "textures/collectible-legendary.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "hazard": {
+      "type": "Texture",
+      "path": "textures/hazard.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "hazard-spikes": {
+      "type": "Texture",
+      "path": "textures/hazard-spikes.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "goal": {
+      "type": "Texture",
+      "path": "textures/goal.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "enemy": {
+      "type": "Texture",
+      "path": "textures/enemy.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "enemy-guardian": {
+      "type": "Texture",
+      "path": "textures/enemy-guardian.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "crusher": {
+      "type": "Texture",
+      "path": "textures/crusher.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "sentinel": {
+      "type": "Texture",
+      "path": "textures/sentinel.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "wall-slide-effect": {
+      "type": "Texture",
+      "path": "textures/wall-slide-effect.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "air-dodge-trail": {
+      "type": "Texture",
+      "path": "textures/air-dodge-trail.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "lava-pit": {
+      "type": "Texture",
+      "path": "textures/lava-pit.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "frost-platform": {
+      "type": "Texture",
+      "path": "textures/frost-platform.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "frost-spike": {
+      "type": "Texture",
+      "path": "textures/frost-spike.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "collectible-ancient": {
+      "type": "Texture",
+      "path": "textures/collectible-ancient.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "turret": {
+      "type": "Texture",
+      "path": "textures/turret.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "plasma-field": {
+      "type": "Texture",
+      "path": "textures/plasma-field.txt",
+      "metadata": {
+        "format": "placeholder"
+      }
+    },
+    "step": {
+      "type": "Audio",
+      "path": "audio/step.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "pickup": {
+      "type": "Audio",
+      "path": "audio/pickup.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-hit": {
+      "type": "Audio",
+      "path": "audio/hazard.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-plasma": {
+      "type": "Audio",
+      "path": "audio/hazard-plasma.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-ice": {
+      "type": "Audio",
+      "path": "audio/hazard-ice.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-lava": {
+      "type": "Audio",
+      "path": "audio/hazard-lava.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-crusher": {
+      "type": "Audio",
+      "path": "audio/hazard-crusher.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-spikes-audio": {
+      "type": "Audio",
+      "path": "audio/hazard-spikes.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "pickup-legendary": {
+      "type": "Audio",
+      "path": "audio/pickup-legendary.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-laser": {
+      "type": "Audio",
+      "path": "audio/hazard-laser.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "wall-slide": {
+      "type": "Audio",
+      "path": "audio/wall-slide.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "air-dodge": {
+      "type": "Audio",
+      "path": "audio/air-dodge.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "pickup-ancient": {
+      "type": "Audio",
+      "path": "audio/pickup-ancient.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "pickup-core": {
+      "type": "Audio",
+      "path": "audio/pickup-core.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "hazard-turret": {
+      "type": "Audio",
+      "path": "audio/hazard-turret.txt",
+      "metadata": {
+        "group": "sfx"
+      }
+    },
+    "core.soundbank": {
+      "type": "SoundBank",
+      "path": "soundbanks/core.soundbank.json"
+    }
+  }
+}

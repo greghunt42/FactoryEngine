@@ -90,9 +90,14 @@ public sealed class World
 
     public void Tick(float deltaTime)
     {
-        // Placeholder tick implementation until systems and scheduler exist.
+        _services.Audio.Update(deltaTime);
         _entityManager.Flush(entity => _components.RemoveAllComponents(entity));
         _scheduler.Run(this, deltaTime);
+    }
+
+    public void FlushDestroyedEntities()
+    {
+        _entityManager.Flush(entity => _components.RemoveAllComponents(entity));
     }
 
     internal EntityManager EntityManager => _entityManager;

@@ -83,6 +83,19 @@ public void Upgrade(DataObject data, int fromVersion)
 ## Validation & Tooling
 - `fe-tools validate-data` invokes `Validate` to catch issues before runtime.
 - Descriptor metadata can export schemas for editor tooling (JSON Schema, etc.).
+- Use `ValidationContext.RequireAsset(namespace, name, message)` whenever a component references catalog assets (textures, audio, prefabs). The CLI wires the resolver up from the active catalogs so descriptors can surface missing assets the same way runtime serialization does:
+```csharp
+public void Validate(Sprite component, ValidationContext ctx)
+{
+    if (string.IsNullOrWhiteSpace(component.TextureName))
+    {
+        ctx.Error("Texture name required.");
+        return;
+    }
+
+    ctx.RequireAsset(component.TextureNamespace, component.TextureName, "Sprite texture missing from catalogs.");
+}
+```
 
 ## Best Practices
 - Keep components POD-like (no references to services or MonoGame types).

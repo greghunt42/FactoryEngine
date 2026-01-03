@@ -9,7 +9,7 @@ public sealed class MovementSystem : SystemBase
     {
         DeclareAccess(builder => builder
             .Reads<Velocity2D>()
-            .Writes<Transform2D>());
+            .Reads<Transform2D>());
     }
 
     protected override void OnRun(SystemContext context)
@@ -24,7 +24,6 @@ public sealed class MovementSystem : SystemBase
             ref var transform = ref World.GetComponent<Transform2D>(entry.Entity);
             ref var velocity = ref World.GetComponent<Velocity2D>(entry.Entity);
             transform.X += velocity.VX * context.DeltaTime;
-            transform.Y += velocity.VY * context.DeltaTime;
         }
     }
 }

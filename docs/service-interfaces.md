@@ -6,10 +6,12 @@ These sketches provide initial interface definitions for core services to help g
 ```csharp
 public interface IAssetService
 {
+    void RegisterCatalog(AssetCatalog catalog);
+    void RegisterLoader<T>(IAssetLoader<T> loader) where T : class;
     AssetHandle<T> Load<T>(AssetId assetId) where T : class;
     ValueTask<AssetHandle<T>> LoadAsync<T>(AssetId assetId);
-    void Release(AssetHandle handle);
-    event Action<AssetId> AssetReloaded;
+    void Release<T>(AssetHandle<T> handle) where T : class;
+    event Action<AssetId>? AssetReloaded;
 }
 ```
 - `AssetHandle` wraps reference counting and exposes `Value`/`Hash`.
@@ -50,11 +52,23 @@ public interface IRenderService
 ```csharp
 public interface IAudioService
 {
-    void PlaySound(SoundId id, AudioParams parameters = default);
+    IReadOnlyList<SoundPlayback> ActiveSounds { get; }
+    event Action<SoundPlayback>? SoundPlayed;
+    event Action<SoundPlayback>? SoundStopped;
+
+    void PlaySound(string soundId, AudioParams parameters = default);
+    void Update(float deltaTime);
     void PlayMusicPlaylist(string playlistId);
     void SetGroupVolume(string groupId, float value);
+    void RegisterSoundBank(SoundBank bank);
+    bool TryResolveSound(string bankName, string soundName, out SoundDefinition definition);
+    void StopSound(Guid id);
+    void SetAssetResolver(Func<AssetId, bool>? resolver);
 }
+
+public readonly record struct AudioParams(float Volume = 1f, float Pitch = 0f, float LifetimeSeconds = 0f);
 ```
+The resolver hook lets the audio service validate `SoundBank` asset references against the same catalogs that drive serialization/descriptors.
 
 ## Diagnostics Service
 ```csharp

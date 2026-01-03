@@ -32,6 +32,11 @@ sounds:
     spatial: true
 ```
 - Maps logical sound IDs to asset catalog entries and default settings.
+- Sound banks are validated against the loaded asset catalogs; make sure to call `IAudioService.SetAssetResolver(AssetCatalogResolver.BuildResolver(...))` before registering banks so missing assets throw immediately instead of silently failing later.
+- Asset catalogs must include audio metadata such as the target `group` so the mix tree can be enforced and CLI tooling can flag incomplete entries.
+- `SoundBank` manifests now live inside the asset catalogs (`type: SoundBank`). The runtime asset pipeline loads the JSON via `SoundBankJsonLoader`, and FactoryPlatformer automatically registers every discovered bank at boot, so designers can update `data/soundbanks/*.soundbank.json` without touching C#.
+- `fe-tools validate-assets` loads those bank manifests during CI and ensures every sound references a valid asset ID/group, so missing clips are caught before they reach runtime.
+- Approved mix groups today are `sfx`, `music`, `ui`, `ambience`, `dialog`, and `voice`; stay within that list unless an ADR extends the mix tree so validation + runtime routing remain in sync. Tooling can learn about additional groups through `--metadata-config` JSON files to keep data-driven banks and CLI validation aligned.
 
 ### Music Playlists
 ```yaml
@@ -65,6 +70,7 @@ audio.PushSnapshot("combat");
 
 ## Event Integration
 - Audio service emits events (`SoundStarted`, `SoundFinished`, `MusicStateChanged`) for gameplay logic.
+- Default implementation exposes `SoundPlayed`/`SoundStopped`, tracks active playbacks, and automatically fires stop events when a sound's configured lifetime elapses (`AudioParams.LifetimeSeconds`).
 - Systems can subscribe to handle achievements, UI feedback, etc.
 
 ## Diagnostics

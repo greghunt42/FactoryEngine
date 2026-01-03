@@ -1,0 +1,45 @@
+{
+  "id": "turret-traps",
+  "entities": [
+    {
+      "name": "LeftTurret",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -160, "y": 260 } },
+        { "name": "Collider2D", "data": { "width": 36, "height": 48 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "turret", "layer": 0.32 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Turret blast!",
+            "resetDelay": 1.75,
+            "sound": "core:hazard-turret"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "axis": "Vertical",
+            "range": 35,
+            "speed": 25
+          }
+        }
+      ]
+    },
+    {
+      "name": "RightTurret",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 220, "y": 230 } },
+        { "name": "Collider2D", "data": { "width": 36, "height": 48 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "turret", "layer": 0.32 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Turret blast!",
+            "resetDelay": 1.75,
+            "sound": "core:hazard-turret"
+          }
+        }
+      ]
+    }
+  ]
+}

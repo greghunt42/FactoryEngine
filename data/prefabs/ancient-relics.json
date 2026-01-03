@@ -1,0 +1,37 @@
+{
+  "id": "ancient-relics",
+  "entities": [
+    {
+      "name": "RelicClusterA",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -220, "y": 210 } },
+        { "name": "Collider2D", "data": { "width": 26, "height": 26 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-ancient", "layer": 0.4 } },
+        {
+          "name": "Collectible",
+          "data": {
+            "value": 75,
+            "message": "Ancient Relic +75",
+            "sound": "core:pickup-ancient"
+          }
+        }
+      ]
+    },
+    {
+      "name": "RelicClusterB",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 180, "y": 140 } },
+        { "name": "Collider2D", "data": { "width": 30, "height": 30 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-ancient", "layer": 0.4 } },
+        {
+          "name": "Collectible",
+          "data": {
+            "value": 90,
+            "message": "Ancient Relic +90",
+            "sound": "core:pickup-ancient"
+          }
+        }
+      ]
+    }
+  ]
+}

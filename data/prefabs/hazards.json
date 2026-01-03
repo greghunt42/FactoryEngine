@@ -1,0 +1,85 @@
+{
+  "id": "hazards",
+  "entities": [
+    {
+      "name": "Pit",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 0, "y": 470 } },
+        { "name": "Collider2D", "data": { "width": 400, "height": 20 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "hazard", "layer": 0.1 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Ouch! Back to spawn.",
+            "resetDelay": 2,
+            "sound": "core:hazard"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LavaPit",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -280, "y": 470 } },
+        { "name": "Collider2D", "data": { "width": 220, "height": 32 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "lava-pit", "layer": 0.12 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Melted by lava!",
+            "resetDelay": 2.5,
+            "sound": "core:hazard-lava"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LavaGeyser",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 140, "y": 250 } },
+        { "name": "Collider2D", "data": { "width": 32, "height": 120 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "hazard-spikes", "layer": 0.25 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Launched by a geyser!",
+            "resetDelay": 2.25,
+            "sound": "core:hazard-spikes"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "axis": "Vertical",
+            "range": 75,
+            "speed": 35
+          }
+        }
+      ]
+    },
+    {
+      "name": "CrusherGate",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 360, "y": 220 } },
+        { "name": "Collider2D", "data": { "width": 120, "height": 36 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "crusher", "layer": 0.28 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Gate crusher hit!",
+            "resetDelay": 2.75,
+            "sound": "core:hazard-crusher"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "axis": "Horizontal",
+            "range": 140,
+            "speed": 50
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "headless-goal",
+  "entities": [
+    {
+      "name": "HeadlessGoal",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 90, "y": 50 } },
+        { "name": "Collider2D", "data": { "width": 48, "height": 72 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "goal", "layer": 0.35 } },
+        {
+          "name": "LevelGoal",
+          "data": {
+            "bonus": 10,
+            "message": "Headless victory!",
+            "resetDelay": 2
+          }
+        }
+      ]
+    }
+  ]
+}

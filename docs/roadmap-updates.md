@@ -2,8 +2,31 @@
 
 - ✅ Phase 1 tasks completed: ECS storage, queries, scheduler, and diagnostics.
 - ✅ Phase 2 progress: serialization/asset/input services wired into world builder; need to add JSON/YAML loaders and CLI integration.
-- ▶ Rendering facade/audio service not yet implemented (Phase 2 #4/#5).
-- ▶ fe-tools commands pending (Phase 2 #7).
+- ✅ Asset service refactor adds catalog root paths, pluggable loaders, and a byte-file loader with tests to unblock real data.
+- ✅ `fe-tools validate-assets` loads real catalogs via the AssetService pipeline.
+- ✅ Audio service now tracks active sounds, exposes playback events, and the FactoryPlatformer sample logs them.
+- ✅ `fe-tools validate-data` reuses serialization + asset loaders to check prefabs with descriptor-provided validation.
+- ✅ `fe-tools validate-data` now emits JSON reports, supports strict mode, writes canonicalized prefab files, and can consume descriptor manifests without compiling module assemblies.
+- ✅ `fe-tools validate-modules` now supports YAML manifests, validates dependency graphs (missing modules + cycles), and aggregates issues into structured reports.
+- ✅ `fe-tools validate-modules` parses manifests, checks type references via reflection, and validates declared services/phases.
+- ✅ Module manifests can declare descriptor manifests; `validate-data` automatically consumes that metadata so both commands share schema sources.
+- ✅ Module validation JSON reports now include dependency graph nodes/cycles so CI dashboards can visualize module relationships.
+- ✅ Asset catalogs placed under `data/catalogs` are auto-discovered; FactoryPlatformer and all `fe-tools` commands now load prefabs, textures, audio clips, and raw data through the real AssetService pipeline.
+- ✅ Sound banks are authorable via catalog assets (`SoundBank` JSON) and FactoryPlatformer automatically registers every bank discovered in its catalogs.
+- ✅ `fe-tools validate-assets` now loads `SoundBank` manifests, validates referenced clip IDs/groups, and fails CI when banks point at missing audio.
+- ✅ `fe-tools validate-assets` recomputes hashes, emits structured JSON reports, and `--fix-hashes` can rewrite manifests with the latest contents.
+- ✅ `fe-tools validate-assets` recomputes file hashes, verifies declared metadata, and emits JSON reports so CI can track catalog drift.
+- ✅ Rendering facade + audio service plumbing now run through the real asset pipeline (BasicRenderService + AudioService) and FactoryPlatformer boots inside a MonoGame runner that maps desktop input to the new services.
+- ✅ FactoryPlatformer runner + headless mode now spawn prefabs declared in `data/config/game.config.json`, so scenes are configurable without code.
+- ✅ Level prefabs now expose collider volumes, PhysicsSystem resolves collisions against static platforms, and the camera clamps to declared world bounds.
+- ✅ MonoGame runner can enumerate named scenes from `game.config`, cycle through them (PageUp/PageDown), and hot-reload the config at runtime (F5) while headless mode accepts `--scene` overrides.
+- ✅ Player movement now supports a jump action (Space/W/Up), with PhysicsBody tracking grounded state + jump speed so InputMovement injects impulses only when touching a surface.
+- ✅ `fe-tools validate-assets` can now load shared defaults from JSON via `--options`, so CI/CD scripts keep catalog directories and report paths centralized while CLI flags remain available for overrides.
+- ✅ MonoGame runner overlay now surfaces render/asset errors in real time (backed by runner diagnostics + backend wrapper) so missing textures/audio issues are obvious both in-game and via headless logs.
+- ✅ Platformer physics exposes coyote time + air control multipliers so jumps feel better, and a new `platforms.prefab` adds elevated platforms to highlight vertical traversal.
+- ✅ Added `fe-tools validate-all --config <file>` to orchestrate asset/data/module validation from a single config file so CI steps stay concise.
+- ✅ Scene selection UI + loading spinner landed in the MonoGame runner, and the sample now includes collectibles/hazards/score tracking with overlay + headless reporting.
+- ✅ fe-tools commands (Phase 2 #7) audited in `docs/tooling-status.md`; future CLI work now belongs to Phase 5.
 - ✅ Phase 3 progress: sample module components, movement system, prefab tests.
-- ▶ Next: add input-driven systems, physics scaffolding, rendering stubs.
+- ✅ Input-driven movement + basic physics scaffolding now run in the sample slice; next up is collisions/camera polish for Phase 3.
 - ✅ Phase 5 partial: none; future work.

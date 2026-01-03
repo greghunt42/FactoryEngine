@@ -7,6 +7,27 @@
         { "device": "keyboard", "key": "D" },
         { "device": "keyboard", "key": "Right" }
       ]
+    },
+    {
+      "name": "move_left",
+      "bindings": [
+        { "device": "keyboard", "key": "A" },
+        { "device": "keyboard", "key": "Left" }
+      ]
+    },
+    {
+      "name": "jump",
+      "bindings": [
+        { "device": "keyboard", "key": "Space" },
+        { "device": "keyboard", "key": "W" },
+        { "device": "keyboard", "key": "Up" }
+      ]
+    },
+    {
+      "name": "air_dodge",
+      "bindings": [
+        { "device": "keyboard", "key": "LeftShift" }
+      ]
     }
   ]
 }

@@ -1,0 +1,45 @@
+{
+  "id": "plasma-fields",
+  "entities": [
+    {
+      "name": "PlasmaColumnA",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -60, "y": 260 } },
+        { "name": "Collider2D", "data": { "width": 32, "height": 110 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "plasma-field", "layer": 0.2 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Plasma surge!",
+            "resetDelay": 2.2,
+            "sound": "core:hazard-plasma"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "axis": "Vertical",
+            "range": 95,
+            "speed": 80
+          }
+        }
+      ]
+    },
+    {
+      "name": "PlasmaColumnB",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 80, "y": 310 } },
+        { "name": "Collider2D", "data": { "width": 48, "height": 40 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "plasma-field", "layer": 0.2 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Charged barrier!",
+            "resetDelay": 2.1,
+            "sound": "core:hazard-plasma"
+          }
+        }
+      ]
+    }
+  ]
+}

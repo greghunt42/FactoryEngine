@@ -1,0 +1,29 @@
+{
+  "id": "sentinels",
+  "entities": [
+    {
+      "name": "SentinelAlpha",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 80, "y": 220 } },
+        { "name": "Collider2D", "data": { "width": 40, "height": 40 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "sentinel", "layer": 0.32 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Sentinel blast!",
+            "resetDelay": 2.25,
+            "sound": "core:hazard-laser"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "range": 120,
+            "speed": 45,
+            "axis": "Horizontal"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "core",
+  "sounds": {
+    "step": {
+      "asset": "core:step",
+      "group": "sfx",
+      "volume": 0.8
+    },
+    "pickup": {
+      "asset": "core:pickup",
+      "group": "sfx",
+      "volume": 0.9
+    },
+    "pickup-legendary": {
+      "asset": "core:pickup-legendary",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard": {
+      "asset": "core:hazard-hit",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard-plasma": {
+      "asset": "core:hazard-plasma",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard-ice": {
+      "asset": "core:hazard-ice",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard-lava": {
+      "asset": "core:hazard-lava",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard-laser": {
+      "asset": "core:hazard-laser",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard-crusher": {
+      "asset": "core:hazard-crusher",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "wall-slide": {
+      "asset": "core:wall-slide",
+      "group": "sfx",
+      "volume": 0.6
+    },
+    "air-dodge": {
+      "asset": "core:air-dodge",
+      "group": "sfx",
+      "volume": 0.9
+    },
+    "pickup-ancient": {
+      "asset": "core:pickup-ancient",
+      "group": "sfx",
+      "volume": 0.95
+    },
+    "hazard-turret": {
+      "asset": "core:hazard-turret",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "hazard-spikes": {
+      "asset": "core:hazard-spikes-audio",
+      "group": "sfx",
+      "volume": 1.0
+    },
+    "pickup-core": {
+      "asset": "core:pickup-core",
+      "group": "sfx",
+      "volume": 0.95
+    }
+  }
+}

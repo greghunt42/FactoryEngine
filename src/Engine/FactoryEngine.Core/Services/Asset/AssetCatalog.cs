@@ -2,12 +2,14 @@ namespace FactoryEngine.Core.Services.Asset;
 
 public sealed class AssetCatalog
 {
-    public AssetCatalog(string @namespace)
+    public AssetCatalog(string @namespace, string rootPath)
     {
         Namespace = @namespace;
+        RootPath = rootPath;
     }
 
     public string Namespace { get; }
+    public string RootPath { get; }
     public Dictionary<string, AssetRecord> Assets { get; } = new(StringComparer.OrdinalIgnoreCase);
 }
 

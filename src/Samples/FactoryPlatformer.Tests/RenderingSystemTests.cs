@@ -1,4 +1,7 @@
+using System;
+using System.IO;
 using FactoryEngine.Core.Engine;
+using FactoryEngine.Core.Services.Asset;
 using FactoryEngine.Core.Services.Rendering;
 using FactoryEngine.Core.Services.Serialization;
 using FactoryEngine.Core.Systems;
@@ -12,9 +15,21 @@ public class RenderingSystemTests
     [Fact]
     public void RenderingSystem_EnqueuesSpriteCommands()
     {
-        var world = new WorldBuilder().Build();
-        world.Serialization.RegisterDescriptor(new Transform2DDescriptor());
-        world.Serialization.RegisterDescriptor(new SpriteDescriptor());
+        var assets = AssetPipeline.CreateDefaultService();
+        assets.RegisterLoader(new StubTextureLoader());
+        var catalog = new AssetCatalog("core", ".");
+        catalog.Assets["player"] = new AssetRecord { Type = AssetTypes.Texture, Path = "player.tex" };
+        assets.RegisterCatalog(catalog);
+
+        var serialization = new SerializationService();
+        serialization.RegisterDescriptor(new Transform2DDescriptor());
+        serialization.RegisterDescriptor(new SpriteDescriptor());
+        var renderService = new BasicRenderService(assets, new ConsoleRenderBackend());
+        var world = new WorldBuilder()
+            .WithSerialization(serialization)
+            .WithAssets(assets)
+            .WithRendering(renderService)
+            .Build();
 
         var entity = world.CreateEntity();
         ref var transform = ref world.AddComponent<Transform2D>(entity);
@@ -29,5 +44,13 @@ public class RenderingSystemTests
         var sprites = world.Rendering.GetFrameBuffer().Sprites;
         Assert.Single(sprites);
         Assert.Equal("core:player", sprites[0].Texture.ToString());
+    }
+
+    private sealed class StubTextureLoader : IAssetLoader<TextureAsset>
+    {
+        public TextureAsset Load(AssetRecord record, string rootPath)
+        {
+            return new TextureAsset(Path.Combine(rootPath, record.Path), Array.Empty<byte>());
+        }
     }
 }

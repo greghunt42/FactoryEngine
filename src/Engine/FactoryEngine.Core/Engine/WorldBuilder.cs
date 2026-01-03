@@ -61,6 +61,11 @@ public sealed class WorldBuilder
 
     public World Build()
     {
+        if (_audio is IAudioAssetConsumer consumer)
+        {
+            consumer.SetAssetService(_assets);
+        }
+
         return new World(_name, _diagnostics, _serialization, _assets, _input, _render, _audio);
     }
 }

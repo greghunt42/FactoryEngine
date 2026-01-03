@@ -4,9 +4,62 @@
     {
       "name": "Player",
       "components": [
-        { "name": "Transform2D", "data": { "x": 0, "y": 0 } },
-        { "name": "Velocity2D", "data": { "vx": 2, "vy": 1 } },
-        { "name": "Sprite", "data": { "ns": "core", "name": "player", "layer": 0.5 } }
+        { "name": "Transform2D", "data": { "x": 0, "y": 50 } },
+        { "name": "Velocity2D", "data": { "vx": 0, "vy": 0 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "player", "layer": 0.5 } },
+        {
+          "name": "PhysicsBody",
+          "data": {
+            "enabled": true,
+            "gravity": 9.8,
+            "minX": -350,
+            "maxX": 350,
+            "jumpSpeed": 220,
+            "runSpeed": 35,
+            "coyoteTime": 0.15,
+            "airControl": 0.5,
+            "airControlExp": 1.25,
+            "jumpCut": 0.4,
+            "groundAccel": 320,
+            "airAccel": 160,
+            "wallJumpSpeed": 200
+          }
+        },
+        {
+          "name": "Collider2D",
+          "data": {
+            "width": 32,
+            "height": 64
+          }
+        },
+        { "name": "PlayerTag" },
+        { "name": "SpawnPoint", "data": { "x": 0, "y": 50 } },
+        {
+          "name": "AirDodge",
+          "data": {
+            "enabled": true,
+            "speed": 220,
+            "cooldown": 1.25
+          }
+        },
+        { "name": "CameraTarget" }
+      ]
+    },
+    {
+      "name": "Camera",
+      "components": [
+        {
+          "name": "Camera2D",
+          "data": {
+            "enabled": true,
+            "viewportWidth": 1280,
+            "viewportHeight": 720,
+            "minX": -320,
+            "maxX": 320,
+            "minY": 0,
+            "maxY": 440
+          }
+        }
       ]
     }
   ]

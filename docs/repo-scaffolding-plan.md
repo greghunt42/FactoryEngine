@@ -28,7 +28,7 @@ FactoryEngine/
    - Set up multi-targeting if needed (net8.0 for core, net8.0-desktop for samples).
 
 3. **Set Up CI**
-   - GitHub Actions workflow running `dotnet build` + `dotnet test` for all projects.
+   - GitHub Actions workflow running `dotnet build` + `dotnet test` for all projects, followed by the shared validator entry point (`./build/validate-all.sh` on Linux/macOS runners or `pwsh build/validate-all.ps1` on Windows). Treat non-zero exits from either step as build blockers so catalog/prefab/module regressions fail immediately.
    - Cache NuGet packages for faster builds.
 
 4. **Logging Infrastructure**

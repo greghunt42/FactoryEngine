@@ -1,0 +1,14 @@
+{
+  "id": "headless-collectible",
+  "entities": [
+    {
+      "name": "HeadlessCollectible",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 40, "y": 50 } },
+        { "name": "Collider2D", "data": { "width": 32, "height": 32 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-rare", "layer": 0.4 } },
+        { "name": "Collectible", "data": { "value": 50, "message": "Test Shard +50" } }
+      ]
+    }
+  ]
+}

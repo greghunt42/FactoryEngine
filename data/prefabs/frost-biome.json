@@ -1,0 +1,61 @@
+{
+  "id": "frost-biome",
+  "entities": [
+    {
+      "name": "FrostPlatform",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -200, "y": 320 } },
+        { "name": "Collider2D", "data": { "width": 260, "height": 24 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "frost-platform", "layer": 0.15 } }
+      ]
+    },
+    {
+      "name": "FrostPlatformB",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 140, "y": 180 } },
+        { "name": "Collider2D", "data": { "width": 120, "height": 24 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "frost-platform", "layer": 0.15 } }
+      ]
+    },
+    {
+      "name": "IcicleTrap",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -40, "y": 200 } },
+        { "name": "Collider2D", "data": { "width": 32, "height": 96 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "frost-spike", "layer": 0.22 } },
+        {
+          "name": "Hazard",
+          "data": {
+            "message": "Frozen solid!",
+            "resetDelay": 2.3,
+            "sound": "core:hazard-ice"
+          }
+        },
+        {
+          "name": "HazardPatrol",
+          "data": {
+            "axis": "Vertical",
+            "range": 60,
+            "speed": 45
+          }
+        }
+      ]
+    },
+    {
+      "name": "FrostCrystal",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 180, "y": 130 } },
+        { "name": "Collider2D", "data": { "width": 24, "height": 24 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-frost", "layer": 0.4 } },
+        {
+          "name": "Collectible",
+          "data": {
+            "value": 30,
+            "message": "Frost Crystal +30",
+            "sound": "core:pickup"
+          }
+        }
+      ]
+    }
+  ]
+}

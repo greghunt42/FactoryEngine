@@ -1,0 +1,64 @@
+{
+  "id": "collectibles",
+  "entities": [
+    {
+      "name": "CollectibleA",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -120, "y": 260 } },
+        { "name": "Collider2D", "data": { "width": 20, "height": 20 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible", "layer": 0.4 } },
+        { "name": "Collectible", "data": { "value": 10, "message": "Crystal +10" } }
+      ]
+    },
+    {
+      "name": "CollectibleB",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 150, "y": 200 } },
+        { "name": "Collider2D", "data": { "width": 20, "height": 20 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible", "layer": 0.4 } },
+        { "name": "Collectible", "data": { "value": 20, "message": "Gem +20" } }
+      ]
+    },
+    {
+      "name": "CollectibleRare",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 260, "y": 180 } },
+        { "name": "Collider2D", "data": { "width": 24, "height": 24 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-rare", "layer": 0.4 } },
+        { "name": "Collectible", "data": { "value": 50, "message": "Core Shard +50" } }
+      ]
+    },
+    {
+      "name": "CollectibleLegendary",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 320, "y": 150 } },
+        { "name": "Collider2D", "data": { "width": 28, "height": 28 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-legendary", "layer": 0.4 } },
+        {
+          "name": "Collectible",
+          "data": {
+            "value": 100,
+            "message": "Legendary Cache +100",
+            "sound": "core:pickup-legendary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ChargedCore",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -20, "y": 180 } },
+        { "name": "Collider2D", "data": { "width": 26, "height": 26 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "collectible-core", "layer": 0.4 } },
+        {
+          "name": "Collectible",
+          "data": {
+            "value": 40,
+            "message": "Charged Core +40",
+            "sound": "core:pickup-core"
+          }
+        }
+      ]
+    }
+  ]
+}

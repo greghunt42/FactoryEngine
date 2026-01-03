@@ -1,0 +1,54 @@
+{
+  "components": [
+    {
+      "name": "Transform2D",
+      "version": 1,
+      "fields": [
+        { "name": "x", "type": "float", "required": true },
+        { "name": "y", "type": "float", "required": true }
+      ]
+    },
+    {
+      "name": "Velocity2D",
+      "version": 1,
+      "fields": [
+        { "name": "vx", "type": "float", "required": true },
+        { "name": "vy", "type": "float", "required": true }
+      ]
+    },
+    {
+      "name": "Sprite",
+      "version": 1,
+      "fields": [
+        { "name": "ns", "type": "string", "required": false },
+        { "name": "name", "type": "string", "required": true },
+        { "name": "layer", "type": "float", "required": false }
+      ]
+    },
+    {
+      "name": "PhysicsBody",
+      "version": 1,
+      "fields": [
+        { "name": "enabled", "type": "bool", "required": false },
+        { "name": "gravity", "type": "float", "required": false },
+        { "name": "ground", "type": "float", "required": false },
+        { "name": "minX", "type": "float", "required": false },
+        { "name": "maxX", "type": "float", "required": false }
+      ]
+    },
+    {
+      "name": "Camera2D",
+      "version": 1,
+      "fields": [
+        { "name": "enabled", "type": "bool", "required": false },
+        { "name": "viewportWidth", "type": "float", "required": false },
+        { "name": "viewportHeight", "type": "float", "required": false }
+      ]
+    },
+    {
+      "name": "CameraTarget",
+      "version": 1,
+      "fields": []
+    }
+  ]
+}

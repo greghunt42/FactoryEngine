@@ -1,0 +1,21 @@
+{
+  "id": "goal",
+  "entities": [
+    {
+      "name": "Goal",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 260, "y": 220 } },
+        { "name": "Collider2D", "data": { "width": 48, "height": 72 } },
+        { "name": "Sprite", "data": { "ns": "core", "name": "goal", "layer": 0.35 } },
+        {
+          "name": "LevelGoal",
+          "data": {
+            "bonus": 50,
+            "message": "Factory complete!",
+            "resetDelay": 3
+          }
+        }
+      ]
+    }
+  ]
+}

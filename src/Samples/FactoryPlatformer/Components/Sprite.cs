@@ -36,6 +36,10 @@ public sealed class SpriteDescriptor : IComponentDescriptor<Sprite>
         if (string.IsNullOrEmpty(component.TextureName))
         {
             context.Error("Sprite texture name required");
+            return;
         }
+
+        var ns = string.IsNullOrWhiteSpace(component.TextureNamespace) ? string.Empty : component.TextureNamespace;
+        context.RequireAsset(ns, component.TextureName);
     }
 }

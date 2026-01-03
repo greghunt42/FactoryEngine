@@ -1,0 +1,11 @@
+{
+  "validateAssets": [
+    "data/catalogs"
+  ],
+  "validateData": [
+    "--descriptor-manifest",
+    "data/descriptors/core.descriptors.json",
+    "data/prefabs"
+  ],
+  "stopOnFirstFailure": true
+}

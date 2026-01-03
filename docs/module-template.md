@@ -11,6 +11,9 @@ Use this template when designing a new FactoryEngine module. Replace placeholder
 ```yaml
 name: ExampleModule
 version: 1.0.0
+engineVersion: ">=0.2.0"
+dependencies:
+  - core
 phases:
   - name: Combat
     insertAfter: Simulation
@@ -19,15 +22,23 @@ components:
   - Health
 systems:
   - CombatSystem (phase: Combat)
+descriptorManifests:
+  - ../descriptors/core.descriptors.json
+metadataConfigs:
+  - ../catalogs/asset-metadata.config.json
 services:
-  - requires: AssetService
-    optional: AudioService
+  requires:
+    - AssetService
+  optional:
+    - AudioService
 ```
 Describe each manifest field:
 - `name` / `version`: semantic version for compatibility checks.
 - `phases`: optional custom phases with insertion points.
 - `components`: list of struct types provided.
 - `systems`: type + phase + ordering metadata.
+- `descriptorManifests`: JSON files that describe prefab/component schemas; paths may be relative to the manifest.
+- `metadataConfigs`: optional JSON files that extend catalog metadata rules (`textureFormats`, `audioGroups`, `defaultAudioGroup`) for the CLI validators.
 - `services`: kernel services the module expects to use.
 
 ## Components

@@ -1,0 +1,35 @@
+{
+  "id": "platforms",
+  "entities": [
+    {
+      "name": "PlatformHigh",
+      "components": [
+        { "name": "Transform2D", "data": { "x": -150, "y": 320 } },
+        {
+          "name": "Collider2D",
+          "data": {
+            "static": true,
+            "width": 200,
+            "height": 30
+          }
+        },
+        { "name": "Sprite", "data": { "ns": "core", "name": "platform", "layer": 0.2 } }
+      ]
+    },
+    {
+      "name": "PlatformTall",
+      "components": [
+        { "name": "Transform2D", "data": { "x": 120, "y": 260 } },
+        {
+          "name": "Collider2D",
+          "data": {
+            "static": true,
+            "width": 140,
+            "height": 30
+          }
+        },
+        { "name": "Sprite", "data": { "ns": "core", "name": "platform", "layer": 0.2 } }
+      ]
+    }
+  ]
+}
